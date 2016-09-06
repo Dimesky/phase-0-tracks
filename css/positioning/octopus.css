@@ -1,0 +1,13 @@
+#Octopus {
+	position: absolute;
+    margin: 90px 0 0 800px;
+    z-index: -1;
+}
+#Glasses {
+	position: absolute;
+	margin: 190px 0 0 842px;
+}
+#Hat {
+	position: absolute;
+	margin: 0 0 0 780px;
+}
