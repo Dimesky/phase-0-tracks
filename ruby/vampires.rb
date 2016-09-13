@@ -33,7 +33,13 @@ def ask_Vamp
 		insurance_bool = false
 	end
 
-	answers = [name, age, year, garlic_bool, insurance_bool]
+	puts "Please name any allergies, one at a time and hit return. Type 'done' when finished: "
+	allergies = nil
+	while allergies != "sunshine" && allergies != "done"
+		allergies = gets.chomp
+	end
+
+	answers = [name, age, year, garlic_bool, insurance_bool, allergies]
 end
 
 def is_Vamp(ask_Vamp)
@@ -49,7 +55,7 @@ def is_Vamp(ask_Vamp)
 	elsif (ask_Vamp[2] != time.year - ask_Vamp[1]) && (ask_Vamp[3] == false && ask_Vamp[4] == false)
 		is_vampire = true
 		puts "Almost certainly a vampire."
-	elsif (ask_Vamp[2] != time.year - ask_Vamp[1]) && (ask_Vamp[3] == false || ask_Vamp[4] == false)
+	elsif ((ask_Vamp[2] != time.year - ask_Vamp[1]) && (ask_Vamp[3] == false || ask_Vamp[4] == false)) || ask_Vamp[5] == "sunshine"
 		is_vampire = true
 		puts "Probably a vampire."
 	else
