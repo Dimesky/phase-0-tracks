@@ -6,6 +6,11 @@ def process_Multiple_Employees
 		is_Vamp(ask_Vamp)
 		init += 1
 	end
+	puts "."
+	puts "."
+	puts "."
+	puts "Actually, never mind! What do these questions have to do with anything?
+		Let's all be friends."
 end
 
 def ask_Vamp
@@ -47,16 +52,12 @@ def is_Vamp(ask_Vamp)
 	puts "***************************************"
 	puts "***************************************"
 	if (ask_Vamp[0] == "Tu Fang" || ask_Vamp[0] == "Drake Cula")
-		is_vampire = true
 		puts "Definitely a vampire."
 	elsif (ask_Vamp[2] == time.year - ask_Vamp[1]) && (ask_Vamp[3] == true || ask_Vamp[4] == true)
-		is_vampire = false
 		puts "Probably not a vampire."
 	elsif (ask_Vamp[2] != time.year - ask_Vamp[1]) && (ask_Vamp[3] == false && ask_Vamp[4] == false)
-		is_vampire = true
 		puts "Almost certainly a vampire."
 	elsif ((ask_Vamp[2] != time.year - ask_Vamp[1]) && (ask_Vamp[3] == false || ask_Vamp[4] == false)) || ask_Vamp[5] == "sunshine"
-		is_vampire = true
 		puts "Probably a vampire."
 	else
 		puts "Results inconclusive."
