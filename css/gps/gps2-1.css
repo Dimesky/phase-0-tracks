@@ -1,3 +1,51 @@
-p {
-	color: green;
+body {
+  color: hotpink;
+  background-color: grey;
+}
+
+h1:hover{
+  color: purple;
+}
+
+header {
+  width: 75%;
+  margin: auto;
+  background-color: blue;
+  border: 2px dashed orange;
+  padding: 10px;
+  font-family: arial;
+  font-size: 125%;
+}
+
+.column-1 {
+  border: 10px dashed black;
+  background-color: purple;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  margin-left: 20%;
+  padding: 10px;
+}
+
+.column-1 h2 {
+  color: yellow;
+}
+
+.column-2 {
+  border: 10px dashed black;
+  background-color: red;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  margin:10px;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+header, footer {
+  background-color: green;
 }
