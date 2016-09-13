@@ -1,0 +1,38 @@
+1. Robot Elevator Algorithm
+
+-Scan room for two circular white buttons in vertical orientation
+-Move towards buttons and press one randomly
+-Until elevator doors open
+	-Wait
+-If people are in elevator
+	-Wait until they leave
+-Else if the elevator is empty OR people are present but not moving, enter
+-Until fully inside elevator
+	-Keep moving into elevator
+-Until facing elevator doors
+	-Rotate around z axis
+-Scan for arrows above elevator and current floor light and store in memory
+	-If arrow light is facing downward
+		-Press every button from current floor to floor 1
+	-Else if arrow light is facing upward
+		-Press every button from current floor to maximum number
+-Laugh maniacally
+
+2. Driving
+
+-While no humans, animals, moving or stationary objects, or other cars are present at a dangerous distance based on speed of movement and not at a habit burger
+	-Until at habit burger
+		-If in garage
+			-Until on street
+				-Reverse out of garage slowly
+		-Else if on street
+			-Accelerate to speed limit slowly
+			-While no stop signs or stop lights present
+				-Continue driving on roadway
+			-If stop sign OR stoplight is present AND stop light is yellow or red, stop
+			-If at stop for 1 second, go
+			-If red light turns green, go
+	-Until there is at least one parking lot space open
+		-Keep driving throught the parking lot
+	-Park in open spot
+
