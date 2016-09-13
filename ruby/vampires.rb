@@ -1,3 +1,13 @@
+def process_Multiple_Employees
+	puts "How many employees will be processed?"
+	emp_number = gets.chomp.to_i
+	init = 0
+	until init == emp_number
+		is_Vamp(ask_Vamp)
+		init += 1
+	end
+end
+
 def ask_Vamp
 	puts "What is your name?"
 	name = gets.chomp
@@ -28,6 +38,8 @@ end
 
 def is_Vamp(ask_Vamp)
 	time = Time.new
+	puts "***************************************"
+	puts "***************************************"
 	if (ask_Vamp[0] == "Tu Fang" || ask_Vamp[0] == "Drake Cula")
 		is_vampire = true
 		puts "Definitely a vampire."
@@ -43,6 +55,8 @@ def is_Vamp(ask_Vamp)
 	else
 		puts "Results inconclusive."
 	end
+	puts "***************************************"
+	puts "***************************************"
 end
 
-is_Vamp(ask_Vamp)
+process_Multiple_Employees
