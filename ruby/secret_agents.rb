@@ -12,6 +12,8 @@
 
 # *Encrypt
 
+
+
 def encrypt(password)
 	index = 0
 	while index < password.length 
@@ -26,7 +28,7 @@ def encrypt(password)
 			index +=1
 		end
 	end
-	puts password
+	#puts password
 	return password
 end
 # puts encrypt
@@ -36,26 +38,38 @@ end
 # string values that way.
 # *Decrypt
 
-def decrypt(encrypt)
+def decrypt(password)
 	index = 0 
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-	while index < encrypt.length
-		if encrypt[index] != " " && encrypt[index] != "z"
-			encrypt[index] = alphabet[(alphabet.index(encrypt[index]) - 1 )]
+	while index < password.length
+		if password[index] != " " && password[index] != "z"
+			password[index] = alphabet[(alphabet.index(password[index]) - 1 )]
 			index += 1
-		elsif encrypt[index] == "z"
-			encrypt[index] = "z"
+		elsif password[index] == "z"
+			password[index] = "y"
 			index +=1
 		else
-			encrypt[index] = " "
+			password[index] = " "
 			index +=1
 		end
 	end
 
-	puts encrypt
+	return password
+
+	#puts encrypt
 end
 
-decrypt(encrypt("swordfish"))
+puts "Please enter your password: "
+password = gets.chomp
+puts "Would you like to encrypt or decrypt this password?"
+usr_choice = gets.chomp
+usr_choice = usr_choice.downcase
+if usr_choice == "encrypt"
+	puts "PASSWORD ENCRYPTED AS: #{encrypt(password)}"
+else
+	puts "PASSWORD DECRYPTED AS: #{decrypt(password)}"
+end
+
 
 # decrypt
