@@ -15,9 +15,12 @@
 def encrypt(password)
 	index = 0
 	while index < password.length 
-		if password[index] != " "
+		if password[index] != " " && password[index] != "z"
 			password[index] = password[index].next
-			index += 1	
+			index += 1
+		elsif password[index] == "z"
+			password[index] = "z"
+			index +=1		
 		else 
 			password[index] = " "
 			index +=1
@@ -38,9 +41,12 @@ def decrypt(encrypt)
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 	while index < encrypt.length
-		if encrypt[index] != " "
+		if encrypt[index] != " " && encrypt[index] != "z"
 			encrypt[index] = alphabet[(alphabet.index(encrypt[index]) - 1 )]
 			index += 1
+		elsif encrypt[index] == "z"
+			encrypt[index] = "z"
+			index +=1
 		else
 			encrypt[index] = " "
 			index +=1
@@ -50,6 +56,6 @@ def decrypt(encrypt)
 	puts encrypt
 end
 
-decrypt(encrypt("this is a test"))
+decrypt(encrypt("swordfish"))
 
 # decrypt
