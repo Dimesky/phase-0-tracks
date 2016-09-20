@@ -30,7 +30,40 @@ puts "              -------                "
 puts
 
 design_info.each {|key, value| puts "Please enter value for #{key}: "
-	design_info[key] = gets.chomp
-}
+if key == :client_age || key == :client_children
+		design_info[key] = gets.chomp.to_i
+	else
+		design_info[key] = gets.chomp
+	end
+}	
 
-p design_info
+if design_info[:is_client_rich].downcase.chr == 'y' || design_info[:is_client_rich].downcase.chr == 't'
+	design_info[:is_client_rich] = true
+else
+	design_info[:is_client_rich] = false
+end
+
+design_info.each {|key, value| puts "#{key.upcase}: #{value}"}
+
+puts "              -------                "
+puts "Would you like to change any values? (Enter the name of the value you wish
+to change, otherwise type 'none'): "
+
+change = gets.chomp
+
+if design_info.has_key?(change.to_sym)
+	puts "Please enter new value for #{change}"
+	if change.to_sym == :client_age || change.to_sym == :client_children
+		design_info[change.to_sym] = gets.chomp.to_i
+	else
+		design_info[change.to_sym] = gets.chomp
+	end
+elsif change == 'none'
+	puts "No changes made."
+else
+	puts "How'd you get here?"
+end
+
+design_info.each {|key, value| puts "#{key.upcase}: #{value}"}
+
+puts "Thank you for using Matt-Assisted-Design technology. Goodbye."
