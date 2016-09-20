@@ -19,10 +19,15 @@ design_info = {
 	client_age: nil,
 	client_location: nil,
 	client_children: nil,
-	client_decor: nil
+	client_decor: nil,
+	is_client_rich: nil
 }
 
-puts "Welcome to Matt-Assisted-Design"
+puts
+puts "              -------                "
+puts "---Welcome to Matt-Assisted-Design---"
+puts "              -------                "
+puts
 
 design_info.each {|key, value| puts "Please enter value for #{key}: "
 	design_info[key] = gets.chomp
