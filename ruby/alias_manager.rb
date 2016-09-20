@@ -7,7 +7,7 @@
 
 
 def request_name
-	puts "Please enter your name as long as you AREN't a spy ;) : "
+	puts "Please enter your name as long as you AREN't a spy ;) - otherwise type 'quit': "
 	spy_name = gets.chomp.downcase   #returning user input
 end
 
