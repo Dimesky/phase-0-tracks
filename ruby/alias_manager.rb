@@ -5,10 +5,19 @@
 #3. Change the vowels in the name to the next vowel in 'aeiou' and all consonants
 #   to the next consonant in the alphabet
 
-
 def request_name
-	puts "Please enter your name as long as you AREN't a spy ;) - otherwise type 'quit': "
-	spy_name = gets.chomp.downcase   #returning user input
+	spy_name = ''
+	until spy_name == 'quit'
+		puts "Please enter your name as long as you AREN't a spy ;) - otherwise type 'quit': "
+		spy_name = gets.chomp.downcase   #returning user input
+		if spy_name == 'quit'
+			puts "Thank you for coming. Goodbye."
+		elsif spy_name == '' || !spy_name.include?(" ")
+			puts "Please enter a valid name"
+		else
+			p next_letter(swap_names(spy_name))
+		end
+	end
 end
 
 def swap_names(name)
@@ -35,4 +44,4 @@ def next_letter(name)
 	new_name = new_name.join('')		   #turn the array back into a string
 end
 
-p next_letter(swap_names(request_name))
+request_name
