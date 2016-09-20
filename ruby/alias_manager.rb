@@ -9,8 +9,8 @@ def request_name
 	alias_store = {}
 	spy_name = ''
 	until spy_name == 'quit'
-		puts "Please enter your name as long as you AREN't a spy ;) - otherwise type 'quit': "
-		spy_name = gets.chomp.downcase   #returning user input
+		puts "Please enter the name of the person who is NOT a spy ;) - otherwise type 'quit': "
+		spy_name = gets.chomp   #returning user input
 		if spy_name == 'quit'
 			puts "Thank you."
 		elsif spy_name == '' || !spy_name.strip.include?(" ") || spy_name.count(" ") > 1
@@ -23,7 +23,7 @@ def request_name
 end
 
 def swap_names(name)
-	new_name = name.split(' ').reverse
+	new_name = name.downcase.split(' ').reverse
 	last_name_length = new_name[0].length
 	name_info = [new_name, last_name_length, name] #returning reverse of first and last name and an the length of the first name
 end
