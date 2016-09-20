@@ -13,29 +13,26 @@ end
 
 def swap_names(name)
 	new_name = name.split(' ').reverse
-	last_name_length = new_name[1].length
+	last_name_length = new_name[0].length
 	name_info = [new_name, last_name_length] #returning reverse of first and last name and an the length of the first name
 end
 
 def next_letter(name)
-	new_name = []
-	novowels = 'bcdfghjklmnpqrstvwxyz'
-	vowels = 'aeiou'
-	name[0] = name[0].join.split('')
-	name[0].each do |char|
-		if vowels.include?(char)
-			new_name.push(vowels[vowels.index(char) + 1])
-		else
-			new_name.push(novowels[novowels.index(char) + 1])
+	new_name = []                          #initialize new array to hold new name
+	novowels = 'bcdfghjklmnpqrstvwxyz'	   #define alphabet without vowels
+	vowels = 'aeiou'					   #define vowels only
+	name[0] = name[0].join.split('')								#take first array value from passed in parameter and turn it into array of letters
+	name[0].each do |char|											#loop through each character
+		if vowels.include?(char)									#if it includes a vowel,
+			new_name.push(vowels[vowels.index(char) + 1])			#take the index of that character within the vowels string and add 1 to that index, while pushing that new letter back into the new array
+		else														#if not,
+			new_name.push(novowels[novowels.index(char) + 1])		#do the same thing with the novowels string
 		end
 	end
-	new_name.insert(name[1], " ")
-	return new_name
+	new_name.insert(name[1], " ")		   #use the passed in array to get the length of the users last name and add a space after it
+	new_name[0].upcase!					   #change the first character to upper case
+	new_name[name[1]+1].upcase!			   #change the first character after the space to upper case
+	new_name = new_name.join('')		   #turn the array back into a string
 end
 
-
 p next_letter(swap_names(request_name))
-
-
-
-#push a space value into the array after the length of the first name (or last cant remember)
