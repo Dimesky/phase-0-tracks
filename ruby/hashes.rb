@@ -23,11 +23,12 @@ design_info = {
 	is_client_rich: nil
 }
 
-puts
-puts "              -------                "
-puts "---Welcome to Matt-Assisted-Design---"
-puts "              -------                "
-puts
+welcome = ["", "              -------                ", "---Welcome to Matt-Assisted-Design---",
+	"              -------                ", ""]
+
+welcome.each do |line|
+	puts line
+end
 
 design_info.each {|key, value| puts "Please enter value for #{key}: "
 if key == :client_age || key == :client_children
@@ -61,7 +62,7 @@ if design_info.has_key?(change.to_sym)
 elsif change == 'none'
 	puts "No changes made."
 else
-	puts "How'd you get here?"
+	puts "Not a valid input."
 end
 
 design_info.each {|key, value| puts "#{key.upcase}: #{value}"}
