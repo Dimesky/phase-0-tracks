@@ -9,17 +9,18 @@ def request_name
 	alias_store = {}
 	spy_name = ''
 	until spy_name == 'quit'
-		puts "Please enter the name of the person who is NOT a spy ;) - otherwise type 'quit': "
+		p "Please enter the name of the person who is NOT a spy ;) - otherwise type 'quit': "
 		spy_name = gets.chomp   #returning user input
 		if spy_name == 'quit'
 			puts "Thank you."
-		elsif spy_name == '' || !spy_name.strip.include?(" ") || spy_name.count(" ") > 1
+		elsif spy_name == '' || !spy_name.strip.include?(" ") || spy_name.count(" ") > 1 || spy_name =~ /\d/    #input validation
 			puts "Please enter a valid name"
 		else
-			alias_store.store(spy_name, next_letter(swap_names(spy_name)))
+			puts next_letter(swap_names(spy_name))
+			alias_store.store(spy_name, next_letter(swap_names(spy_name)))					 #storing hash key/values of input name, and return value from next_letter method
 		end
 	end
-	alias_store.each {|orig_name, spy_name| puts "#{spy_name} is acutally #{orig_name}."}
+	alias_store.each {|orig_name, spy_name| puts "#{spy_name} is acutally #{orig_name}."}    #storing names in hash t
 end
 
 def swap_names(name)
