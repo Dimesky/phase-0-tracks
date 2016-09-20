@@ -12,7 +12,7 @@ def request_name
 		spy_name = gets.chomp.downcase   #returning user input
 		if spy_name == 'quit'
 			puts "Thank you for coming. Goodbye."
-		elsif spy_name == '' || !spy_name.include?(" ")
+		elsif spy_name == '' || !spy_name.strip.include?(" ") || spy_name.count(" ") > 1
 			puts "Please enter a valid name"
 		else
 			p next_letter(swap_names(spy_name))
@@ -28,7 +28,7 @@ end
 
 def next_letter(name)
 	new_name = []                          #initialize new array to hold new name
-	novowels = 'bcdfghjklmnpqrstvwxyz'	   #define alphabet without vowels
+	novowels = 'bcdfghjklmnpqrstvwxyzb'	   #define alphabet without vowels - add catch with 'b' for edge case
 	vowels = 'aeiou'					   #define vowels only
 	name[0] = name[0].join.split('')								#take first array value from passed in parameter and turn it into array of letters
 	name[0].each do |char|											#loop through each character
