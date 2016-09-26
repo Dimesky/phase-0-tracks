@@ -33,3 +33,15 @@
   # Iterate through hash
   # On each iteration, ensure that the output of that item - number pair looks pretty
 # output: hash
+
+def create_a_list(items)
+	item_array = items.split(' ')
+	number_of_items = 0
+	item_hash = {}
+ 	item_array.each do |item|
+ 		item_hash[item] = 1
+ 	end
+ 	p item_hash
+ end
+
+ create_a_list("carrots apples cereal pizza")
