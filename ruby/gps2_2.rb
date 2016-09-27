@@ -90,6 +90,28 @@ update_quantity("ice cream", new_list, 1)
 
 beautify(new_list)
 
+#1. I learned that pseudocode is best when it is very descriptive in a step by step fashion. If it isn't descriptive, it
+# => is much harder to use to accurately translate it to actual code. Pseudocode also has to include what data will be 
+# => input, and what will be output when defining methods.
+#
+#2. The tradeoffs of using arrays and hashes for this assignment is that srings can easily be converted into arrays, while it's
+# => harder to turn them into hashes. However, hashes are easier to use when you want to keep track of differing amounts
+# => of certain items that was called for in this exercise.
+#
+#3. A mthod returns the evaluation of the last statement that was listed in the method itself. That's why in each of our methods
+# => we used an explicit return so that the implicit value (sometims an enumerator) was replaced with a hash value.
+#
+#4. You can pass any object into a method as an argument, even other method calls (which are subsequently evaluated to something
+# => else before the outer method uses it as an argument.)
+#
+#5. You can pass information between methods by returning a value from a method, that is then used as an argument passed into the
+# => parameter that was defined in another method declaration. This allows the new method to access the data that was manipulated
+# => from the code that was defined in the original method.
+#
+#6. The concepts that were solidified in this challenge were how to pseudocode effectively, global vs local scope of variables,
+# => and using explicit vs implicit return values. For me, the difficulty still lies with wrapping my brain around defining very
+# => simple methods instead of long verbose ones.
+
 
 
 
