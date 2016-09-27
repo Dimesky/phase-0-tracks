@@ -1,5 +1,8 @@
 class Santa
 
+	attr_reader :age, :ethnicity
+	attr_writer :gender
+
 	def speak
 		puts "Ho, Ho, Ho! Haaaappy Holidays!"
 	end
@@ -15,6 +18,27 @@ class Santa
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end
+
+	def celebrate_birthday
+		@age += 1
+	end
+
+	def get_mad_at(reindeer)
+		@reindeer_ranking.delete(reindeer)
+		@reindeer_ranking.push(reindeer)
+	end
+
+	# def gender=(gender)
+	# 	@gender = gender
+	# end
+
+	# def age
+	# 	@age
+	# end
+
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
 end
 
@@ -32,4 +56,10 @@ genders.each do |gender|
 	index += 1
 end
 
-p arr_of_santa_objects
+arr_of_santa_objects[0].celebrate_birthday
+arr_of_santa_objects[0].get_mad_at("Rudolph")
+arr_of_santa_objects[0].gender = "gender neutral"
+p arr_of_santa_objects[0].age
+p arr_of_santa_objects[0].ethnicity
+
+p arr_of_santa_objects[0]
