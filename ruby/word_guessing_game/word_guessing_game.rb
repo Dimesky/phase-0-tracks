@@ -73,7 +73,11 @@ puts "Please enter a word or phrase for the second player to guess: "
 
 hidden = game.convert(game.actual_phrase = gets.chomp)
 
-p hidden
+100.times {|star| puts "* * * * *"}
+
+puts "Hello second player, do not scroll up!"
+
+puts "The word or phrase to guess: #{hidden}"
 
 total_guesses = game.guess_amount(hidden)
 
