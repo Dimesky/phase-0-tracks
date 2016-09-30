@@ -1,13 +1,12 @@
 class Word_guessing_game
 
-	attr_reader :hidden_phrase, :total_guesses_available, :is_over
+	attr_reader :hidden_phrase, :total_guesses_available
 	attr_accessor :actual_phrase, :guess_count, :guess_array
 
 	def initialize
 		@hidden_phrase = ''
 		@actual_phrase = ''
 		@guess_count = 0
-		@is_over = false
 		@total_guesses_available = 0
 		@guess_array = []
 	end
