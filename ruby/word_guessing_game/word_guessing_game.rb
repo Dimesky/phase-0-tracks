@@ -56,7 +56,7 @@ class Word_guessing_game
 	def won(stored_phrase, obfuscated_phrase, guess_amount, number_of_guesses)
 		@guess_count = guess_amount
 		@total_guesses_available = number_of_guesses
-		if guess_amount < number_of_guesses && stored_phrase == obfuscated_phrase
+		if guess_amount <= number_of_guesses && stored_phrase == obfuscated_phrase
 			return true
 		else
 			return false
@@ -85,12 +85,12 @@ while !game.won(game.actual_phrase, game.hidden_phrase, game.guess_count, total_
 	char_guess = gets.chomp
 	puts game.guess_char(char_guess, game.actual_phrase, hidden)
 	puts "Number of guesses so far: #{game.guess_count}"
-	if game.guess_count >= game.total_guesses_available
+	if game.guess_count > game.total_guesses_available
 		puts "Sorry, you are really horrible at this."
 		break
 	end
 end
 
-if game.guess_count < game.total_guesses_available
+if game.guess_count <= game.total_guesses_available
 	puts "OMG, you win!"
 end
