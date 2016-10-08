@@ -25,14 +25,14 @@
 
 function longest_string(array) {
 
-	longest_string = ""
+	var longest_string = "";
 
 	for (i = 0; i < array.length; i++) {
 		if (array[i].length >= longest_string.length) {
 			longest_string = array[i];
 		}
 	}
-	return longest_string
+	return longest_string;
 }
 
 function compare_people(person1, person2) {
@@ -68,7 +68,7 @@ function create_string_array(number) {
 
 
 
-console.log(longest_string(["long phrase","longest phrase","longer phrase"]))
+console.log(longest_string(["long phrase","longest phrase","longer phrase"]));
 
 var matt_person = {name: "Matt", age: 33};
 var tanya_person = {name: "Tanya", age: 27};
@@ -76,4 +76,13 @@ var same_person = {name: "Same", age: 33};
 console.log(compare_people(matt_person, tanya_person));
 console.log(compare_people(matt_person, same_person));
 
-console.log(create_string_array(10));
+//console.log(create_string_array(10));
+
+var array = [];
+
+for (times = 0; times < 10; times++) {
+	array = create_string_array(Math.floor(Math.random() * 10) + 1);
+	console.log(array);
+	console.log("The longest string in this array was " + (longest_string(array)));
+}
+
