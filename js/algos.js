@@ -7,6 +7,22 @@
 //4. The index of the string that is returned is then used to access the longest string itself,
 //5.  	which is then returned.
 
+// Pseudocode for a method that takes two people objecs and compares their instance variables and returns true if either are the same
+
+//1. The method takes two people objects as arguments
+//2. The person's instance variables are then set to variables
+//3. If person 1's name is the same as person 2's name OR person 1's age is the same as person 2's age
+//4. Return true
+//5. 	Otherwise - return false
+
+// Pseudocode for a method that takes an integer for length, and builds and returns an array of strings of the given length
+
+//1. The method takes a number as an argument
+//2. The method then uses the number to loop that many times
+//3. 	With each loop a random number is generated
+//4.	The random number is used to create another random string of characters that are that number in length
+//5. The string is added to an array that is returned.
+
 function longest_string(array) {
 
 	longest_string = ""
@@ -33,6 +49,23 @@ function compare_people(person1, person2) {
 	}
 }
 
+function create_string_array(number) {
+
+	//return (Math.floor((Math.random() * 10)) + 1);
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	string_array = [];
+
+	for (i = 0; i < number; i++) {
+		var string_length = (Math.floor((Math.random() * 10)) + 1);
+		new_string = "";
+		for (l = 0; l < string_length; l++) {
+			new_string += alphabet[Math.floor(Math.random() * 26)];
+		}
+		string_array.push(new_string);
+	}
+	return string_array;
+}
+
 
 
 console.log(longest_string(["long phrase","longest phrase","longer phrase"]))
@@ -42,3 +75,5 @@ var tanya_person = {name: "Tanya", age: 27};
 var same_person = {name: "Same", age: 33};
 console.log(compare_people(matt_person, tanya_person));
 console.log(compare_people(matt_person, same_person));
+
+console.log(create_string_array(10));
