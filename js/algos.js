@@ -19,4 +19,26 @@ function longest_string(array) {
 	return longest_string
 }
 
+function compare_people(person1, person2) {
+
+	name1 = person1.name;
+	name2 = person2.name;
+	age1 = person1.age;
+	age2 = person2.age;
+
+	if (name1 === name2 || age1 === age2) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+
 console.log(longest_string(["long phrase","longest phrase","longer phrase"]))
+
+var matt_person = {name: "Matt", age: 33};
+var tanya_person = {name: "Tanya", age: 27};
+var same_person = {name: "Same", age: 33};
+console.log(compare_people(matt_person, tanya_person));
+console.log(compare_people(matt_person, same_person));
