@@ -1,0 +1,59 @@
+1. SELECT * FROM uconnbb;
+
+1|5|1979|false|21|1
+2|1|1999|true|28|2
+3|2|2004|true|27|2
+4|3|2011|true|26|2
+5|4|2014|true|26|3
+6|9|2016|false|24|3
+
+2. UPDATE uconnbb SET seed=7 WHERE year=2014;
+
+1|5|1979|false|21|1
+2|1|1999|true|28|2
+3|2|2004|true|27|2
+4|3|2011|true|26|2
+5|7|2014|true|26|3
+6|9|2016|false|24|3
+
+3. SELECT * FROM uconnbb, coaches WHERE uconnbb.coach_id = coaches.id;
+
+1|5|1979|false|21|1|1|Dom Perno
+2|1|1999|true|28|2|2|Jim Calhoun
+3|2|2004|true|27|2|2|Jim Calhoun
+4|3|2011|true|26|2|2|Jim Calhoun
+5|7|2014|true|26|3|3|Kevin Ollie
+6|9|2016|false|24|3|3|Kevin Ollie
+
+4. SELECT uconnbb.year, uconnbb.win_champ, coaches.name FROM uconnbb JOIN coaches ON uconnbb.coach_id = coaches.id;
+
+1979|false|Dom Perno
+1999|true|Jim Calhoun
+2004|true|Jim Calhoun
+2011|true|Jim Calhoun
+2014|true|Kevin Ollie
+2016|false|Kevin Ollie
+
+5. DELETE FROM uconnbb WHERE win_champ="false";
+
+6. SELECT uconnbb.year, coaches.name, uconnbb.win_champ FROM uconnbb INNER JOIN coaches ON uconnbb.coach_id = coaches.id;
+
+(INNER JOIN)
+
+1999|Jim Calhoun|true
+2004|Jim Calhoun|true
+2011|Jim Calhoun|true
+2014|Kevin Ollie|true
+
+7. SELECT uconnbb.year, coaches.name FROM uconnbb LEFT JOIN coaches ON uconnbb.coach_id = coaches.id ORDER BY uconnbb.year DESC;
+
+(LEFT JOIN)
+
+2014|Kevin Ollie
+2011|Jim Calhoun
+2004|Jim Calhoun
+1999|Jim Calhoun
+
+8. SELECT uconnbb.wins, uconnbb.seed, uconnbb.win_champ FROM uconnbb FULL OUTER JOIN coaches ON uconnbb.coach_id = coaches.id ORDER BY uconnbb.wins DESC;
+
+"Error: RIGHT and FULL OUTER JOINs are not currently supported"
