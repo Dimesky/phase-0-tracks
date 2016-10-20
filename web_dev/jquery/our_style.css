@@ -1,0 +1,26 @@
+button {
+  display: block;
+}
+
+div {
+	padding: 10px 0px 10px 50px;
+}
+
+textarea {
+	margin-top: 20px;
+	background-color: lightblue;
+	padding-right: 200px;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 15px;
+	color: green;
+	border: 1px dashed grey;
+	margin: auto;
+}
